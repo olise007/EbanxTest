@@ -25,6 +25,7 @@ class operations {
 				$check = false;
 				break;
 		}
+		return $check;
 	}
 	
 	public function deposit(string $destination, int $amount){
