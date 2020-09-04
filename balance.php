@@ -1,6 +1,6 @@
 <?php
 include("operations.class.php");
-$account_id = $_GET['account_id'];
+$account_id = (string)$_GET['account_id'];
 $request = new operations();
 
 if($request->checkAccountExist($account_id)){
