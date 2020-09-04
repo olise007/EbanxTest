@@ -1,6 +1,6 @@
 <?php
 include("operations.class.php");
-$data = json_decode(file_get_contents('php://input'), true);
+$data = json_decode(file_get_contents('php://input'), true);///Get input JSON stream
 
 $type = $data['type'];
 
@@ -14,8 +14,8 @@ if(isset($data['origin'])){
 	$origin = (string)$data['origin'];	
 }
 
-http_response_code(201);
-	
+
+//Determine transaction type and run method from class	
 switch($type){
 	case 'deposit':
 	  $action = new operations($destination);	
@@ -40,10 +40,11 @@ switch($type){
 }
 
 if(($do_event != '')&&($do_event != 0)){
+	http_response_code(201);
 	$do_event = json_encode($do_event);
 } else {
-http_response_code(404);
-$do_event = 0;	
+    http_response_code(404);
+    $do_event = 0;	
 }
 
 

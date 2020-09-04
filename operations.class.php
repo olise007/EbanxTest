@@ -1,7 +1,7 @@
 <?php
 class operations {
 
-	public $account_path = '/home/techionc/public_html/ebanx.rms.net.ng/account_data/';
+	public $account_path = '/home/techionc/public_html/ebanx.rms.net.ng/account_data/';//Path to folder holding perisitent data as .txt
 	
 	public function __contstruct($account_id=''){
 		
